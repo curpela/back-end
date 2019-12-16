@@ -2,9 +2,19 @@
 	"name": "curpela-back-end",
 	"version": "1.0.0",
 	"description": "GraphQL API",
-	"main": "server.js",
-	"repository": "git@github.com:curpela/curpela-back-end.git",
 	"author": "Skyelar Carroll <32372095+Fractured2K@users.noreply.github.com>",
+	"main": "server.js",
+	"scripts": {
+		"dev": "env-cmd -f ./.env nodemon src/server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:curpela/curpela-back-end.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Fractured2K/curpela-back-end/issues"
+	},
+	"homepage": "https://github.com/Fractured2K/curpela-back-end#readme",
 	"dependencies": {
 		"apollo-server": "^2.9.13",
 		"argon2": "^0.25.1",
