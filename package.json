@@ -16,6 +16,7 @@
 	},
 	"homepage": "https://github.com/Fractured2K/curpela-back-end#readme",
 	"dependencies": {
+		"@prisma/photon": "2.0.0-preview018.2",
 		"apollo-server": "^2.9.13",
 		"argon2": "^0.25.1",
 		"env-cmd": "^10.0.1",
