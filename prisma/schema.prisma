@@ -1,6 +1,6 @@
-datasource db {
+datasource postgresql {
     provider = "postgresql"
-    url      = "postgresql://postgres@localhost/postgres"
+    url      = env("DB_URL")
 }
 
 generator photon {
