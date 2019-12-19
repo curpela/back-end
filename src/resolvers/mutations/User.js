@@ -16,6 +16,7 @@ module.exports = {
      */
     const hashedPassword = await argon2.hash(args.data.password, {
       type: argon2.argon2id,
+      timeCost: 10,
       hashLength: 64
     });
 
