@@ -1,6 +1,8 @@
 const { gql } = require("apollo-server");
 
 module.exports = gql`
+  directive @userValidation()
+
   """
   Queries
   """
@@ -11,12 +13,12 @@ module.exports = gql`
     me: User!
   }
 
-  # """
-  # Mutations
-  # """
-  # # type Mutation {
-
-  # # }
+  """
+  Mutations
+  """
+  type Mutation {
+	createUser(data: UserCreateInput!): AuthPayload!
+  }
 
   """
   User Type
@@ -36,5 +38,13 @@ module.exports = gql`
     country: String!
     phoneNumber: Int!
     profilePicture: String!
+  }
+
+  """
+  Authentication payload
+  """
+  type AuthPayload {
+    token: String!
+    user: User!
   }
 `;

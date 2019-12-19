@@ -1,6 +1,6 @@
+const { Photon } = require("@prisma/photon");
 const { ApolloServer } = require("apollo-server");
 const typeDefs = require("./schema");
-const { Photon } = require("@prisma/photon");
 
 // Create db connection
 const photon = new Photon();
