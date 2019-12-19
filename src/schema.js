@@ -30,14 +30,14 @@ module.exports = gql`
     username: String!
     firstName: String!
     lastName: String!
-    state: String!
-    city: String!
-    zip: Int!
-    address: String!
-    address2: String!
-    country: String!
-    phoneNumber: Int!
-    profilePicture: String!
+    state: String
+    city: String
+    zip: Int
+    address: String
+    address2: String
+    country: String
+    phoneNumber: Int
+    profilePicture: String
   }
 
   """
