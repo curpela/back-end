@@ -17,6 +17,7 @@ module.exports = gql`
   type Mutation {
     createUser(data: UserCreateInput!): AuthPayload!
     loginUser(data: UserLoginInput!): AuthPayload!
+    updateUser(data: UserUpdateInput!): User!
   }
 
   """
@@ -50,6 +51,21 @@ module.exports = gql`
   input UserLoginInput {
     emailOrUsername: String!
     password: String!
+  }
+
+  input UserUpdateInput {
+    email: String
+    password: String
+    username: String
+    firstName: String
+    lastName: String
+    state: String
+    city: String
+    zip: Int
+    address: String
+    address2: String
+    country: String
+    phoneNumber: Int
   }
 
   """
