@@ -1,5 +1,3 @@
-# Curpela backend
+# Curpela API
 
 # ⏅
-
-

@@ -1,5 +1,5 @@
 {
-	"name": "curpela-back-end",
+	"name": "curpela-api",
 	"version": "1.0.0",
 	"description": "GraphQL API",
 	"author": "Skyelar Carroll <32372095+Fractured2K@users.noreply.github.com>",
@@ -9,12 +9,12 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:curpela/curpela-back-end.git"
+		"url": "git@github.com:curpela/curpela-api.git"
 	},
 	"bugs": {
-		"url": "https://github.com/Fractured2K/curpela-back-end/issues"
+		"url": "https://github.com/Fractured2K/curpela-api/issues"
 	},
-	"homepage": "https://github.com/Fractured2K/curpela-back-end#readme",
+	"homepage": "https://github.com/Fractured2K/curpela-api#readme",
 	"dependencies": {
 		"@prisma/photon": "2.0.0-preview018.2",
 		"apollo-server": "^2.9.13",
