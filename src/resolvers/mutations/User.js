@@ -1,4 +1,5 @@
 const argon2 = require("argon2");
+const generateToken = require("../../utils/generateToken");
 
 /*
  * User Mutations
@@ -19,7 +20,6 @@ module.exports = {
       timeCost: 10,
       hashLength: 64
     });
-
     // create user
     const user = await photon.users.create({
       data: {
