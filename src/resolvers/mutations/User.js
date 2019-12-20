@@ -3,7 +3,10 @@ const generateToken = require("../../utils/generateToken");
 const getUserId = require("../../utils/getUserId");
 
 /*
- * User Mutations
+ *User Mutations*
+ - createUser
+ - loginUser
+ - updateUser
  */
 
 module.exports = {

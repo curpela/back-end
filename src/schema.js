@@ -18,6 +18,18 @@ module.exports = gql`
     createUser(data: UserCreateInput!): AuthPayload!
     loginUser(data: UserLoginInput!): AuthPayload!
     updateUser(data: UserUpdateInput!): User!
+    followUser(
+      """
+      ID of user to be followed
+      """
+      id: ID!
+    ): Follower
+    unfollowUser(
+      """
+      ID of user to be unfollowed
+      """
+      id: ID!
+    ): Follower
   }
 
   """
@@ -38,6 +50,10 @@ module.exports = gql`
     country: String
     phoneNumber: Int
     profilePicture: String
+    followers: [Follower!]!
+    following: [Follower!]!
+    followerCount: Int!
+    followingCount: Int!
   }
 
   input UserCreateInput {
@@ -74,5 +90,11 @@ module.exports = gql`
   type AuthPayload {
     token: String!
     user: User!
+  }
+
+  type Follower {
+    id: ID!
+    following: User!
+    follower: User!
   }
 `;
