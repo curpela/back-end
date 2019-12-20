@@ -1,0 +1,120 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "stepType": "CreateModel",
+      "model": "Follower"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Follower",
+      "field": "id",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Follower",
+      "field": "id",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Follower",
+      "field": "id",
+      "directive": "default",
+      "argument": "",
+      "value": "cuid()"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Follower",
+      "field": "id",
+      "directive": "id"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Follower",
+      "field": "following",
+      "type": "User",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Follower",
+      "field": "following",
+      "directive": "relation"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Follower",
+      "field": "following",
+      "directive": "relation",
+      "argument": "name",
+      "value": "\"UserFollowers\""
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Follower",
+      "field": "follower",
+      "type": "User",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "Follower",
+      "field": "follower",
+      "directive": "relation"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "Follower",
+      "field": "follower",
+      "directive": "relation",
+      "argument": "name",
+      "value": "\"UserFollowing\""
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "field": "followers",
+      "type": "Follower",
+      "arity": "list"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "User",
+      "field": "followers",
+      "directive": "relation"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "User",
+      "field": "followers",
+      "directive": "relation",
+      "argument": "name",
+      "value": "\"UserFollowers\""
+    },
+    {
+      "stepType": "CreateField",
+      "model": "User",
+      "field": "following",
+      "type": "Follower",
+      "arity": "list"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "User",
+      "field": "following",
+      "directive": "relation"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "User",
+      "field": "following",
+      "directive": "relation",
+      "argument": "name",
+      "value": "\"UserFollowing\""
+    }
+  ]
+}
