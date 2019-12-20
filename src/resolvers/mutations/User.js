@@ -1,5 +1,6 @@
 const argon2 = require("argon2");
 const generateToken = require("../../utils/generateToken");
+const getUserId = require("../../utils/getUserId");
 
 /*
  * User Mutations
@@ -66,5 +67,19 @@ module.exports = {
 
     // return auth payload
     return { token, user };
+  },
+  async updateUser(_, args, { photon, request }, info) {
+    const userId = getUserId(request);
+
+    const user = await photon.users.update({
+      where: {
+        id: userId
+      },
+      data: {
+        ...args.data
+      }
+    });
+
+    return user;
   }
 };
