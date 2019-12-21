@@ -23,5 +23,16 @@ module.exports = {
     );
 
     return follower;
+  },
+  async unfollowUser(_, args, { photon, request }, info) {
+    const userId = getUserId(request);
+
+    await photon.followers.delete({
+      where: {
+        id: args.id
+      }
+    });
+
+    return args.id;
   }
 };
