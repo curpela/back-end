@@ -29,7 +29,7 @@ module.exports = gql`
       ID of user to be unfollowed
       """
       id: ID!
-    ): Follower
+    ): ID!
   }
 
   """
