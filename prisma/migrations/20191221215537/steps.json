@@ -1,0 +1,126 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "stepType": "CreateModel",
+      "model": "PostLike"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "PostLike",
+      "field": "id",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "PostLike",
+      "field": "id",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "PostLike",
+      "field": "id",
+      "directive": "default",
+      "argument": "",
+      "value": "cuid()"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "PostLike",
+      "field": "id",
+      "directive": "id"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "PostLike",
+      "field": "likedBy",
+      "type": "User",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateModel",
+      "model": "PostComment"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "PostComment",
+      "field": "id",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "PostComment",
+      "field": "id",
+      "directive": "default"
+    },
+    {
+      "stepType": "CreateDirectiveArgument",
+      "model": "PostComment",
+      "field": "id",
+      "directive": "default",
+      "argument": "",
+      "value": "cuid()"
+    },
+    {
+      "stepType": "CreateDirective",
+      "model": "PostComment",
+      "field": "id",
+      "directive": "id"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "PostComment",
+      "field": "comment",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "PostComment",
+      "field": "author",
+      "type": "User",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Post",
+      "field": "author",
+      "type": "User",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Post",
+      "field": "description",
+      "type": "String",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Post",
+      "field": "likes",
+      "type": "PostLike",
+      "arity": "list"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "Post",
+      "field": "comments",
+      "type": "PostComment",
+      "arity": "list"
+    },
+    {
+      "stepType": "DeleteField",
+      "model": "Post",
+      "field": "owner"
+    },
+    {
+      "stepType": "DeleteField",
+      "model": "Post",
+      "field": "published"
+    }
+  ]
+}
