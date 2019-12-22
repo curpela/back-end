@@ -54,6 +54,7 @@ module.exports = gql`
     following: [Follower!]!
     followerCount: Int!
     followingCount: Int!
+    posts: [Post!]!
   }
 
   input UserCreateInput {
