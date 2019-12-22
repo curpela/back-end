@@ -110,11 +110,21 @@ module.exports = gql`
   }
 
   type UserPost {
-    media: [Upload!]!
+    author: User!
+    media: [PostMedia!]!
     description: String
     likes: [PostLike!]!
     comments: [PostComment!]!
     createdAt: DateTime!
+  }
+
+  type PostMedia {
+    id: ID!
+    post: UserPost!
+    url: String!
+    contentType: String!
+    size: Float
+    length: Float
   }
 
   type PostLike {
