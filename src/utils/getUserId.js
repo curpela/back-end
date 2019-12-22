@@ -1,10 +1,14 @@
 const jwt = require("jsonwebtoken");
 
+/*
+ * Parses current user id from jwt token passed in auth headers
+ */
+
 module.exports = request => {
   // get token from auth header
   const token = request.req.headers.authorization;
 
-  //   check if token exists
+  // check if token exists
   if (!token) throw new Error("Authentication token required");
 
   // verify validity of jwt token
