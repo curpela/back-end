@@ -15,9 +15,11 @@ module.exports = gql`
   Mutations
   """
   type Mutation {
+    # User
     createUser(data: UserCreateInput!): AuthPayload!
     loginUser(data: UserLoginInput!): AuthPayload!
     updateUser(data: UserUpdateInput!): User!
+    # Follower
     followUser(
       """
       ID of user to be followed
@@ -30,6 +32,8 @@ module.exports = gql`
       """
       id: ID!
     ): ID!
+    # UserPost
+    createPost(data: UserPostCreateInput!): UserPost!
   }
 
   """
@@ -110,6 +114,7 @@ module.exports = gql`
     description: String
     likes: [PostLike!]!
     comments: [PostComment!]!
+    createdAt: DateTime!
   }
 
   type PostLike {
