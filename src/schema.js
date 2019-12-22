@@ -54,9 +54,12 @@ module.exports = gql`
     following: [Follower!]!
     followerCount: Int!
     followingCount: Int!
-    posts: [Post!]!
+    posts: [UserPost!]!
   }
 
+  """
+  Required input to create a user
+  """
   input UserCreateInput {
     firstName: String!
     lastName: String!
@@ -65,6 +68,9 @@ module.exports = gql`
     password: String!
   }
 
+  """
+  Required input to login a user
+  """
   input UserLoginInput {
     emailOrUsername: String!
     password: String!
@@ -97,5 +103,23 @@ module.exports = gql`
     id: ID!
     following: User!
     follower: User!
+  }
+
+  type UserPost {
+    media: [Upload!]!
+    description: String
+    likes: [PostLike!]!
+    comments: [PostComment!]!
+  }
+
+  type PostLike {
+    id: ID!
+    likedBy: User!
+  }
+
+  type PostComment {
+    id: ID!
+    comment: String!
+    author: User!
   }
 `;
