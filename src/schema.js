@@ -1,6 +1,7 @@
 const { gql } = require("apollo-server");
 
 module.exports = gql`
+  scalar DateTime
   """
   Queries
   """
@@ -116,6 +117,11 @@ module.exports = gql`
     likes: [PostLike!]!
     comments: [PostComment!]!
     createdAt: DateTime!
+  }
+
+  input UserPostCreateInput {
+    description: String
+    media: [Upload!]!
   }
 
   type PostMedia {
