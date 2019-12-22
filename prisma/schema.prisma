@@ -30,12 +30,14 @@ model User {
 }
 
 model Post {
-    id        String   @default(cuid()) @id
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
-    owner     User
-    published Boolean
-    media     Media
+    id          String        @default(cuid()) @id
+    createdAt   DateTime      @default(now())
+    updatedAt   DateTime      @updatedAt
+    author      User
+    media       Media
+    description String
+    likes       PostLike[]
+    comments    PostComment[]
 }
 
 model Media {
@@ -45,6 +47,17 @@ model Media {
     contentType String
     size        Int?
     length      Float?
+}
+
+model PostLike {
+    id      String @default(cuid()) @id
+    likedBy User
+}
+
+model PostComment {
+    id      String @default(cuid()) @id
+    comment String
+    author  User
 }
 
 model Follower {
