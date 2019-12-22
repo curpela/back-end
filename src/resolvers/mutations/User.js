@@ -19,16 +19,16 @@ module.exports = {
      * hash and salt password
      * Argon2 Wiki - https://github.com/ranisalt/node-argon2/wiki/Options
      */
-    const hashedPassword = await argon2.hash(args.data.password, {
+    args.data.password = await argon2.hash(args.data.password, {
       type: argon2.argon2id,
       timeCost: 10,
       hashLength: 64
     });
+
     // create user
     const user = await photon.users.create({
       data: {
-        ...args.data,
-        password: hashedPassword
+        ...args.data
       }
     });
 
