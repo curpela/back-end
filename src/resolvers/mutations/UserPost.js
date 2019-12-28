@@ -2,7 +2,6 @@ const getUserId = require("../../utils/getUserId");
 const s3Upload = require("../../utils/s3Upload");
 
 module.exports = {
-  // CREATE POST - WIP
   async createPost(_, args, { photon, request }, info) {
     const userId = getUserId(request);
 
@@ -12,7 +11,7 @@ module.exports = {
     );
 
     // create post
-    return photon.posts.create(
+    return await photon.posts.create(
       {
         data: {
           author: {
@@ -20,7 +19,9 @@ module.exports = {
               id: userId
             }
           },
-          media,
+          media: {
+			  create: media
+		  },
           description: args.data.description
         }
       },
