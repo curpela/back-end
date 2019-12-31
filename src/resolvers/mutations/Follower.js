@@ -17,7 +17,7 @@ module.exports = {
         "Sorry, but the user you're trying to follow doesn't exist "
       );
 
-    const follower = photon.followers.create(
+	  return photon.followers.create(
       {
         data: {
           follower: {
@@ -34,8 +34,6 @@ module.exports = {
       },
       info
     );
-
-    return follower;
   },
   async unfollowUser(_, args, { photon, request }) {
     const userId = getUserId(request);

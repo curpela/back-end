@@ -11,6 +11,10 @@ module.exports = gql`
     Me represents the current user based off of the authorization token sent from headers
     """
     me: User!
+	"""
+	Feed fetches 25 chronologically ordered posts by users that the current user is following
+	"""
+	feed: [UserPost]!
   }
 
   """
