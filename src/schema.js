@@ -11,10 +11,31 @@ module.exports = gql`
     Me represents the current user based off of the authorization token sent from headers
     """
     me: User!
-	"""
-	Feed fetches 25 chronologically ordered posts by users that the current user is following
-	"""
-	feed: [UserPost]!
+    """
+    Feed fetches 25 chronologically ordered posts from currently followed users
+    """
+    feed(
+      """
+      Specifies how many of the returned objects in the list should be skipped.
+      """
+      skip: Int
+      """
+      Specifies the starting object for the list based of an ID
+      """
+      after: String
+      """
+      Specifies the last object for the list based of an ID
+      """
+      before: ID
+      """
+      Specifies how many elements should be returned in the list (as seen from the beginning of the list).
+      """
+      first: Int
+      """
+      Specifies how many elements should be returned in the list (as seen from the end of the list).
+      """
+      last: Int
+    ): [UserPost]!
   }
 
   """
@@ -116,6 +137,7 @@ module.exports = gql`
   }
 
   type UserPost {
+    id: ID!
     author: User!
     media: [PostMedia!]!
     description: String

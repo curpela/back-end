@@ -5,6 +5,7 @@
 	"author": "Skyelar Carroll <32372095+Fractured2K@users.noreply.github.com>",
 	"main": "server.js",
 	"scripts": {
+		"start": "node src/server.js",
 		"dev": "env-cmd -f ./.env nodemon src/server.js"
 	},
 	"repository": {

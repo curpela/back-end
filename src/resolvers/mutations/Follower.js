@@ -17,7 +17,22 @@ module.exports = {
         "Sorry, but the user you're trying to follow doesn't exist "
       );
 
-	  return photon.followers.create(
+    // check if user is already following the requested user
+    const isFollowing = await photon.followers.findMany({
+      where: {
+        follower: {
+          id: userId
+        },
+        following: {
+          id: args.id
+        }
+      }
+    });
+
+    if (isFollowing.length > 0)
+      throw new Error("Sorry, but you're already following that user");
+
+    return photon.followers.create(
       {
         data: {
           follower: {
