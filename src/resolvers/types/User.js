@@ -53,5 +53,17 @@ module.exports = {
 		  }
 	  })
 
+  },
+  async postCount(parent, _, { photon }) {
+	  // TODO: REPLACE WITH ACTUAL AGGREGATION
+	  const following = await photon.posts.findMany({
+		where: {
+		  author: {
+			id: parent.id
+		  }
+		}
+	  });
+
+	  return following.length;
   }
 };
