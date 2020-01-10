@@ -6,7 +6,8 @@
 	"main": "server.js",
 	"scripts": {
 		"start": "node src/server.js",
-		"dev": "env-cmd -f ./.env nodemon src/server.js"
+		"dev": "env-cmd -f ./.env nodemon src/server.js",
+		"seed": "node prisma/seed"
 	},
 	"repository": {
 		"type": "git",
@@ -17,7 +18,7 @@
 	},
 	"homepage": "https://github.com/Fractured2K/curpela-api#readme",
 	"dependencies": {
-		"@prisma/photon": "2.0.0-preview018.2",
+		"@prisma/photon": "2.0.0-preview019",
 		"apollo-server": "^2.9.13",
 		"argon2": "^0.25.1",
 		"aws-sdk": "^2.595.0",
