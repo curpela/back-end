@@ -18,6 +18,16 @@ module.exports = {
     return user;
   },
   /*
+   * Fetches user profile by username
+   */
+  async profile(_, args, { photon }) {
+    return photon.users.findOne({
+      where: {
+        username: args.username
+      }
+    });
+  },
+  /*
    * Fetches 25 chronologically ordered posts by users that the current user is following
    */
   async feed(_, args, { photon, request }) {
