@@ -12,6 +12,10 @@ module.exports = gql`
     """
     me: User!
     """
+    Profile fetches any user profile by username
+    """
+    profile(username: String!): User!
+    """
     Feed fetches 25 chronologically ordered posts from currently followed users
     """
     feed(
@@ -73,6 +77,7 @@ module.exports = gql`
     username: String!
     firstName: String!
     lastName: String!
+    about: String!
     state: String
     city: String
     zip: Int
