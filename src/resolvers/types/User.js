@@ -43,5 +43,15 @@ module.exports = {
     });
 
     return following.length;
+  },
+  posts (parent, _, { photon }) {
+	  return photon.posts.findMany({
+		  where: {
+			  author: {
+				  id: parent.id
+			  }
+		  }
+	  })
+
   }
 };
