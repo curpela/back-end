@@ -91,6 +91,7 @@ module.exports = gql`
     followerCount: Int!
     followingCount: Int!
     posts: [UserPost!]!
+	postCount: Int!
   }
 
   """
