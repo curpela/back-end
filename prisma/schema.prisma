@@ -53,12 +53,14 @@ model Media {
 model PostLike {
     id      String @default(cuid()) @id
     likedBy User
+    post    Post
 }
 
 model PostComment {
     id      String @default(cuid()) @id
     comment String
     author  User
+    post    Post
 }
 
 model Follower {
