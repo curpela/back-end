@@ -9,6 +9,7 @@ async function main() {
 	username: "skyelar",
 	password: "$argon2id$v=19$m=4096,t=10,p=1$kAh+YlFdxmejQSvdv8hYAQ$T9cWnNkkAhE6T5ZuZfCYvp+eqdamAB/7sbWK2EOSh446PGBgZfN4m7QmUKYiXPipGJAQB7TiEEtSrj1osOHXvA",
 	email: "skyelar@curpela.com",
+	about: "Currently working on curpela.",
 	posts: {
 		create: [
 			{
@@ -49,6 +50,7 @@ async function main() {
       username: "adventurini",
       password: "$argon2id$v=19$m=4096,t=10,p=1$kAh+YlFdxmejQSvdv8hYAQ$T9cWnNkkAhE6T5ZuZfCYvp+eqdamAB/7sbWK2EOSh446PGBgZfN4m7QmUKYiXPipGJAQB7TiEEtSrj1osOHXvA",
 	  email: "anthony@curpela.com",
+	  about: "Currently working on curpela.",
 	  following: {
 		create: {
 			following: {
