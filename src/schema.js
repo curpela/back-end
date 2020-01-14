@@ -148,7 +148,9 @@ module.exports = gql`
     media: [PostMedia!]!
     description: String
     likes: [PostLike!]!
+    likeCount: Int!
     comments: [PostComment!]!
+    commentCount: Int!
     createdAt: DateTime!
   }
 

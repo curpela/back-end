@@ -18,17 +18,17 @@ module.exports = {
       last: 5
     });
   },
-  likeCount(parent, _, { photon}) {
-	 // TODO: REPLACE WITH ACTUAL AGGREGATION
-	 const likes = await photon.likes.findMany({
-		where: {
-		  post: {
-			  id: parent.id
-		  }
-		}
-	  });
+  async likeCount(parent, _, { photon }) {
+    // TODO: REPLACE WITH ACTUAL AGGREGATION
+    const likes = await photon.likes.findMany({
+      where: {
+        post: {
+          id: parent.id
+        }
+      }
+    });
 
-	  return likes.length;
+    return likes.length;
   },
   comments(parent, _, { photon }) {
     return photon.postComments.findMany({
@@ -40,16 +40,16 @@ module.exports = {
       last: 5
     });
   },
-  commentCount(parent, _, { photon}) {
-	 // TODO: REPLACE WITH ACTUAL AGGREGATION
-	 const comments = await photon.comments.findMany({
-		where: {
-		  post: {
-			  id: parent.id
-		  }
-		}
-	  });
+  async commentCount(parent, _, { photon }) {
+    // TODO: REPLACE WITH ACTUAL AGGREGATION
+    const comments = await photon.comments.findMany({
+      where: {
+        post: {
+          id: parent.id
+        }
+      }
+    });
 
-	  return comments.length;
-},
+    return comments.length;
+  }
 };
