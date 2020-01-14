@@ -77,7 +77,7 @@ module.exports = gql`
     username: String!
     firstName: String!
     lastName: String!
-    about: String!
+    about: String
     state: String
     city: String
     zip: Int
@@ -91,7 +91,7 @@ module.exports = gql`
     followerCount: Int!
     followingCount: Int!
     posts: [UserPost!]!
-	postCount: Int!
+    postCount: Int!
   }
 
   """
@@ -169,11 +169,13 @@ module.exports = gql`
   type PostLike {
     id: ID!
     likedBy: User!
+    post: UserPost!
   }
 
   type PostComment {
     id: ID!
     comment: String!
     author: User!
+    post: UserPost!
   }
 `;
