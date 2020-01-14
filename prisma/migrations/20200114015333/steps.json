@@ -1,0 +1,19 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "stepType": "CreateField",
+      "model": "PostLike",
+      "field": "post",
+      "type": "Post",
+      "arity": "required"
+    },
+    {
+      "stepType": "CreateField",
+      "model": "PostComment",
+      "field": "post",
+      "type": "Post",
+      "arity": "required"
+    }
+  ]
+}
