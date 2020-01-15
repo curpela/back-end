@@ -1,4 +1,11 @@
 module.exports = {
+ async author(parent, _, { photon }) {
+	return await photon.posts.findOne({
+		where: {
+			id: parent.id
+		}
+	}).author();
+  },
   media(parent, _, { photon }) {
     return photon.media.findMany({
       where: {
