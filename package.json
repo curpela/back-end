@@ -6,7 +6,7 @@
    "main": "server.js",
    "scripts": {
       "start": "ts-node src/server.ts",
-      "dev": "env-cmd -f ./.env nodemon src/server.js",
+      "dev": "env-cmd -f ./.env nodemon",
       "seed": "node prisma/seed"
    },
    "repository": {

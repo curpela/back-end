@@ -2,13 +2,13 @@
 	{
 		"name": "production",
 		"type": "postgres",
-		"synchronize": true,
 		"logging": true
 	},
 	{
 		"name": "development",
 		"type": "postgres",
 		"synchronize": true,
+		"ssl": true,
 		"logging": true
 	},
 	{
