@@ -18,18 +18,16 @@
    },
    "homepage": "https://github.com/Fractured2K/curpela-api#readme",
    "dependencies": {
-      "@prisma/photon": "2.0.0-preview019",
       "apollo-server": "^2.9.13",
       "argon2": "^0.25.1",
       "aws-sdk": "^2.595.0",
       "env-cmd": "^10.0.1",
       "graphql": "^14.5.8",
       "jsonwebtoken": "^8.5.1",
-      "prisma2": "^2.0.0-preview018.2",
-      "uuid": "^3.3.3",
-      "typeorm": "0.2.22",
+      "pg": "^7.3.0",
       "reflect-metadata": "^0.1.10",
-      "pg": "^7.3.0"
+      "typeorm": "0.2.22",
+      "uuid": "^3.3.3"
    },
    "devDependencies": {
       "ts-node": "3.3.0",
