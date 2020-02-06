@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
  * Generates JWT Token
  */
 
-module.exports = id => {
+export default id => {
   if (!id) {
     throw new Error("Please provide an id to generate JWT Token");
   }

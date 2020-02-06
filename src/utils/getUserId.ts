@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
  * Parses current user id from jwt token passed in auth headers
  */
 
-module.exports = request => {
+export default request => {
   // get token from auth header
   const token = request.req.headers.authorization;
 

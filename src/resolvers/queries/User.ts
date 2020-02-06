@@ -1,6 +1,6 @@
-const getUserId = require("../../utils/getUserId");
+import getUserId from "../../utils/getUserId";
 
-module.exports = {
+export default {
   /*
    * Fetches current users profile
    */
@@ -16,15 +16,5 @@ module.exports = {
     if (!user) throw new Error("User doesn't exist");
 
     return user;
-  },
-  /*
-   * Fetches user profile by username
-   */
-  async profile(_, args, { photon }) {
-    return photon.users.findOne({
-      where: {
-        username: args.username
-      }
-    });
   }
 };

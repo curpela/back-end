@@ -1,6 +1,7 @@
-const argon2 = require("argon2");
-const generateToken = require("../../utils/generateToken");
-const getUserId = require("../../utils/getUserId");
+import * as argon2 from "argon2";
+import generateToken from "../../utils/generateToken";
+import getUserId from "../../utils/getUserId";
+import { User } from "../../entity/User";
 
 /*
  *User Mutations*
@@ -9,34 +10,36 @@ const getUserId = require("../../utils/getUserId");
  - updateUser
  */
 
-module.exports = {
-  async createUser(_, args, { photon }) {
-    // check password length
-    if (args.data.password.length < 8)
-      throw new Error("Password must be 8 characters or longer");
+export default {
+  async createUser(_, args) {
+    try {
+      console.log("got here");
+      // check password length
+      if (args.data.password.length < 8)
+        throw new Error("Password must be 8 characters or longer");
 
-    /*
-     * hash and salt password
-     * Argon2 Wiki - https://github.com/ranisalt/node-argon2/wiki/Options
-     */
-    args.data.password = await argon2.hash(args.data.password, {
-      type: argon2.argon2id,
-      timeCost: 10,
-      hashLength: 64
-    });
+      /*
+       * hash and salt password
+       * Argon2 Wiki - https://github.com/ranisalt/node-argon2/wiki/Options
+       */
+      const password = await argon2.hash(args.data.password, {
+        type: argon2.argon2id,
+        timeCost: 10,
+        hashLength: 64
+      });
 
-    // create user
-    const user = await photon.users.create({
-      data: {
-        ...args.data
-      }
-    });
+      // create user
+      const user = await User.create({ email: args.data.email, password });
+      await user.save();
 
-    // generate jwt token
-    const token = generateToken(user.id);
+      // generate jwt token
+      const token = generateToken(user.id);
 
-    // return AuthPayload
-    return { token, user };
+      // return AuthPayload
+      return { token, user };
+    } catch (error) {
+      throw new Error(error);
+    }
   },
   async loginUser(_, args, { photon }) {
     // query for user by email and username
@@ -54,7 +57,7 @@ module.exports = {
     });
 
     // check existence of user
-    if (!user.length > 0) throw new Error("Incorrect email and or password");
+    // if (!user.length > 0) throw new Error("Incorrect email and or password");
 
     // validate password
     const validPassword = await argon2.verify(
