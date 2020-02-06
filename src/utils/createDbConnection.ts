@@ -12,6 +12,9 @@ export const createDbConnection = async () => {
       } as any)
     : createConnection({
         ...connectionOptions,
+        ssl: {
+          rejectUnauthorized: false
+        },
         url: process.env.DATABASE_URL,
         name: "default"
       } as any);
