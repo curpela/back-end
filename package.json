@@ -6,7 +6,7 @@
    "main": "server.js",
    "scripts": {
       "start": "ts-node src/server.ts",
-      "dev": "env-cmd -f ./.env nodemon",
+      "dev": "env-cmd -f ./.env nodemon"
    },
    "repository": {
       "type": "git",
