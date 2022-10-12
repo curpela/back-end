@@ -17,7 +17,7 @@
    },
    "homepage": "https://github.com/Fractured2K/curpela-api#readme",
    "dependencies": {
-      "apollo-server": "^2.9.13",
+      "apollo-server": "^2.25.4",
       "argon2": "^0.25.1",
       "aws-sdk": "^2.595.0",
       "env-cmd": "^10.0.1",
